@@ -53,6 +53,12 @@ public class TalkToObject : MonoBehaviour
         {
             playerIsNear = false;
             promptText.gameObject.SetActive(false); // Hide text when leaving
+
+            // Pause the audio when player moves out of range
+            if (audioSource.isPlaying)
+            {
+                audioSource.Pause();
+            }
         }
     }
 }
